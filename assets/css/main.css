@@ -814,6 +814,40 @@
 		margin-bottom: 2em;
 	}
 
+
+
+	.quote-list li {
+		padding: 1em 0 1em 0;
+		overflow: hidden;
+	}
+
+		.quote-list li:first-child {
+			padding-top: 0 !important;
+			border-top: 0 !important;
+		}
+
+		.quote-list li:last-child {
+			padding-bottom: 0 !important;
+			border-bottom: 0 !important;
+		}
+
+		.quote-list li img {
+			float: left;
+		}
+
+		.quote-list li p {
+			margin: 0 0 0 90px;
+			font-size: 1.2em;
+			font-style: italic;
+		}
+
+		.quote-list li span {
+			display: block;
+			margin-left: 90px;
+			font-size: 0.9em;
+			font-weight: 400;
+		}
+
 /* Table */
 
 	table {
@@ -1354,6 +1388,7 @@
 						position: relative;
 						display: block;
 						height: 100%;
+						margin-right: 90px;
 					}
 
 					#me .pic .arrow {
@@ -1563,6 +1598,33 @@
 
 				#me header > p {
 					font-size: 1.25em;
+				}
+
+
+
+		/* Multi-use */
+
+			.quote-list li {
+				padding: 1em 0 1em 0;
+			}
+
+				.quote-list li img {
+					width: 60px;
+				}
+
+				.quote-list li p {
+					margin: 0 0 0 80px;
+					font-size: 1em;
+					font-style: italic;
+					line-height: 1.8em;
+				}
+
+				.quote-list li span {
+					display: block;
+					margin-left: 80px;
+					font-size: 0.8em;
+					font-weight: 400;
+					line-height: 1.8em;
 				}
 
 		/* Footer */
