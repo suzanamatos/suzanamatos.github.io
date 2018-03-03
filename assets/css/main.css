@@ -1282,6 +1282,7 @@
 		/* Wrapper */
 
 			#wrapper {
+				padding: 1.8em 0;
 				width: 45em;
 				margin: 0 auto;
 				opacity: 0.00001;
