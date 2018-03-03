@@ -27,7 +27,10 @@
 	}
 
 	ol, ul {
-		list-style: none;
+	    display: block;
+	    margin-left: 0;
+	    margin-right: 0;
+	    padding-left: 40px;
 	}
 
 	blockquote, q {
@@ -771,6 +774,11 @@
 		font-weight: 300;
 		color: #777777;
 	}
+	
+	var{
+	    font-style: italic;
+		color: #363636;
+	}
 
 	strong, b, h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
@@ -810,7 +818,7 @@
 		clear: both;
 	}
 
-	p, ul, ol, dl, table, blockquote, form {
+	p, table, blockquote, form {
 		margin-bottom: 2em;
 	}
 
@@ -854,21 +862,25 @@
 		width: 100%;
 	}
 
-		table.default tbody tr {
+		tbody tr {
 			border-bottom: solid 1px #f4f4f4;
 		}
+		tr:nth-child(even) {background: #EEE}
 
-		table.default td {
+		td {
 			padding: 0.5em 1em 0.5em 1em;
 		}
 
-		table.default th {
+		th {
 			text-align: left;
 			font-weight: 400;
 			padding: 0.5em 1em 0.5em 1em;
 		}
 
-		table.default thead {
+		thead {
+			background: #DDD;
+			text-align: left;
+			font-weight: 400;
 			border-bottom: solid 2px #f4f4f4;
 		}
 
@@ -1041,13 +1053,13 @@
 
 /* List */
 
-	ul.default {
-		list-style: disc;
-		padding-left: 1em;
+	ul {
+		list-style: circle;
+		padding-left: 1.25em;
 	}
 
-		ul.default li {
-			padding-left: 0.5em;
+		ul li {
+			padding-left: 0.25em;
 		}
 
 	ul.actions li {
@@ -1059,13 +1071,21 @@
 			margin-left: 0;
 		}
 
-	ol.default {
+	ol {
 		list-style: decimal;
 		padding-left: 1.25em;
 	}
 
-		ol.default li {
+		ol li {
 			padding-left: 0.25em;
+		}
+		
+		ol ol {
+			list-style: lower-alpha;
+		}
+		
+		ol ol ol {
+			list-style: lower-roman;
 		}
 
 /* Icons */
@@ -1203,8 +1223,13 @@
 				letter-spacing: -0.015em;
 			}
 
-			h3, h4, h5, h6 {
+			h3 {
 				font-size: 1.25em;
+				letter-spacing: -0.015em;
+			}
+			
+			h4, h5, h6 {
+				font-size: 1.1em;
 				letter-spacing: -0.015em;
 			}
 
@@ -1388,14 +1413,13 @@
 						position: relative;
 						display: block;
 						height: 100%;
-						margin-right: 90px;
 					}
 
 					#me .pic .arrow {
 						display: block;
 						position: absolute;
 						right: 0;
-						top: 50%;
+						top: 35%;
 						margin-top: -1.375em;
 						width: 2.75em;
 						height: 2.75em;
@@ -1448,7 +1472,7 @@
 						position: absolute;
 						left: 0;
 						top: 52.5%;
-						font-size: 1.5em;
+						font-size: 1.3em;
 						letter-spacing: -0.015em;
 						margin-top: 0;
 					}
@@ -1474,13 +1498,24 @@
 				line-height: 1.75em;
 			}
 
-			h1, h2 {
+			h1{
 				font-size: 1.75em;
 				letter-spacing: -0.025em;
 			}
+			
 
-			h3, h4, h5, h6 {
+			h2 {
+				font-size: 1.6em;
+				letter-spacing: -0.025em;
+			}
+
+			h3{
 				font-size: 1.25em;
+				letter-spacing: -0.025em;
+			}
+			
+			h4, h5, h6 {
+				font-size: 1.1em;
 				letter-spacing: -0.025em;
 			}
 
