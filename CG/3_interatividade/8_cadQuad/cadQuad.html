@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAD -- Quadrilátero</title>
+</head>
+<body>
+  <canvas id="gl-canvas" style="border: 2px solid black" width="400" height="400">
+  Sorry; your web browser does not support HTML5's canvas element.
+  </canvas>
+  <select id="mymenu" size="7">
+    <option value="0" selected>Preto</option>
+    <option value="1">Vermelho</option>
+    <option value="2">Amarelo</option>
+    <option value="3">Verde</option>
+    <option value="4">Azul</option>
+    <option value="5">Magenta</option>
+    <option value="6">Ciano</option>
+    </select>
+
+  <script id="fragment-shader" type="x-shader/x-fragment">
+    #version 300 es
+    precision highp float;
+    in vec4 vColor;
+    out vec4 fColor;
+    void main()
+    {
+      fColor = vColor;
+    }
+  </script>
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    #version 300 es
+    in vec4 aPosition;
+    in vec4 aColor;
+    out vec4 vColor;
+    void main()
+    {
+      gl_Position = aPosition;
+      vColor = aColor;
+    }
+  </script>
+    
+  <script src="../../Common/initShaders.js"></script>
+  <script src="../../Common/MV.js"></script>
+  <script src="cadQuad.js"></script>
+</body>
+
+</html>

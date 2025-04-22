@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quadrado rodando - iteratividade</title>
+</head>
+<body>
+  <canvas id="gl-canvas" style="border: 2px solid black" width="512" height="512">
+  Sorry; your web browser does not support HTML5's canvas
+  element.
+  </canvas>
+  <br>
+  <select id="mymenu" size="3">
+    <option value="0">Mudar direção</option>
+    <option value="1">Mais rápido</option>
+    <option value="2">Mais lento</option>
+    </select>
+
+  <script id="fragment-shader" type="x-shader/x-fragment">
+    #version 300 es
+    precision highp float;
+    out vec4 fColor;
+    void main()
+    {
+      fColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+    }
+  </script>
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    #version 300 es
+    in vec2 aPosition;
+    uniform float uTheta;
+    void main()
+    {
+      gl_Position.x = cos(uTheta) * aPosition.x - sin(uTheta) * aPosition.y;
+      gl_Position.y = sin(uTheta) * aPosition.x + cos(uTheta) * aPosition.y;
+      gl_Position.z = 0.0;
+      gl_Position.w = 1.0;
+    }
+  </script>
+    
+  <script src="../../Common/initShaders.js"></script>
+  <script src="../../Common/MV.js"></script>
+  <script src="quadMenu.js"></script>
+</body>
+
+</html>

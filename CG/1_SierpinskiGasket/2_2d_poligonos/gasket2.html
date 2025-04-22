@@ -4,7 +4,7 @@
   <title>2D Sierpinski Gasket</title>
 </head>
 <body>
-  <canvas id="gl-canvas" style="border: 2px solid black" width="800" height="512">
+  <canvas id="gl-canvas" style="border: 2px solid black" width="512" height="512">
   Sorry; your web browser does not support HTML5's canvas element.
   </canvas>
 
@@ -22,14 +22,14 @@
     in vec4 aPosition;
     void main()
     {
-	    gl_PointSize = 2.0;
+	    gl_PointSize = 3.0;
       gl_Position = aPosition;
     }
   </script>
     
   <script src="../../Common/initShaders.js"></script>
   <script src="../../Common/MV.js"></script>
-  <script src="gasket1.js"></script>
+  <script src="gasket2.js"></script>
 </body>
 
 </html>

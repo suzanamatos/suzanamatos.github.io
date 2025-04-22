@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>2D Sierpinski Gasket</title>
+  <title>Reshape</title>
 </head>
 <body>
-  <canvas id="gl-canvas" style="border: 2px solid black" width="800" height="512">
-  Sorry; your web browser does not support HTML5's canvas element.
+  <canvas id="gl-canvas" style="border: 2px solid black" width="512" height="512">
+  Sorry; your web browser does not support HTML5's canvas
+  element.
   </canvas>
 
   <script id="fragment-shader" type="x-shader/x-fragment">
@@ -19,17 +20,20 @@
   </script>
   <script id="vertex-shader" type="x-shader/x-vertex">
     #version 300 es
-    in vec4 aPosition;
+    in vec2 aPosition;
+    uniform float uTheta;
     void main()
     {
-	    gl_PointSize = 2.0;
-      gl_Position = aPosition;
+      gl_Position.x = cos(uTheta) * aPosition.x - sin(uTheta) * aPosition.y;
+      gl_Position.y = sin(uTheta) * aPosition.x + cos(uTheta) * aPosition.y;
+      gl_Position.z = 0.0;
+      gl_Position.w = 1.0;
     }
   </script>
     
   <script src="../../Common/initShaders.js"></script>
   <script src="../../Common/MV.js"></script>
-  <script src="gasket1.js"></script>
+  <script src="quadReshape2.js"></script>
 </body>
 
 </html>

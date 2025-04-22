@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>2D Sierpinski Gasket</title>
+  <title>Inserindo pontos - iteratividade</title>
 </head>
 <body>
-  <canvas id="gl-canvas" style="border: 2px solid black" width="800" height="512">
-  Sorry; your web browser does not support HTML5's canvas element.
+  <canvas id="gl-canvas" style="border: 2px solid black" width="512" height="512">
+  Sorry; your web browser does not support HTML5's canvas
+  element.
   </canvas>
 
   <script id="fragment-shader" type="x-shader/x-fragment">
     #version 300 es
     precision highp float;
+    in vec4 vColor;
     out vec4 fColor;
     void main()
     {
-      fColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+      fColor = vColor;
     }
   </script>
   <script id="vertex-shader" type="x-shader/x-vertex">
     #version 300 es
     in vec4 aPosition;
+    in vec4 aColor;
+    out vec4 vColor;
     void main()
     {
-	    gl_PointSize = 2.0;
+      vColor = aColor;
+	    gl_PointSize = 10.0;
       gl_Position = aPosition;
     }
   </script>
     
   <script src="../../Common/initShaders.js"></script>
   <script src="../../Common/MV.js"></script>
-  <script src="gasket1.js"></script>
+  <script src="quadClick.js"></script>
 </body>
 
 </html>
